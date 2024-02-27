@@ -8,7 +8,9 @@ export default function Puppy() {
 
   useEffect(() => {
     const fetchPuppy = async (id) => {
-      const API_URL = "" + id;
+      const API_URL =
+        "https://fsa-puppy-bowl.herokuapp.com/api/2401-FSA-ET-WEB-FT-SF-CHARLES" +
+        id;
       const response = await fetch(API_URL);
       const parsedResponse = await response.json();
       setPuppy(parsedResponse.data);
@@ -17,7 +19,7 @@ export default function Puppy() {
   }, [id]);
 
   const goBack = () => {
-    navigate("/puppies");
+    navigate("/puppylist");
   };
 
   return puppy ? (
